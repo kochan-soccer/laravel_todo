@@ -1,1 +1,48 @@
 @charset "utf-8";
+
+
+/* ボタン関連 */
+.create_btn {
+  border: solid rgba(190, 10, 235, 0.707) 2px;
+  color:rgb(190, 10, 235, 0.707);
+}
+
+.create_btn:hover {
+  background:rgba(190, 10, 235, 0.707);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.update_btn {
+  border: solid rgba(255, 168, 5, 0.864) 2px;
+  color:rgba(255, 168, 5, 0.864);
+}
+
+.update_btn:hover {
+  background:rgba(255, 168, 5, 0.864);
+  color: #fff;
+  transition: 0.5s;
+}
+.delete_btn {
+  border: solid rgba(0, 238, 255, 0.823) 2px;
+  color:rgba(0, 238, 255, 0.823);
+}
+
+.delete_btn:hover {
+  background:rgba(0, 238, 255, 0.823);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.btn {
+  padding: 5px 15px;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+th {
+  width: 200px;
+}
+

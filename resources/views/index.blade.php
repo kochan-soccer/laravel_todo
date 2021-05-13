@@ -22,11 +22,11 @@
     <form action="/todo/create" method="post">
     @csrf
       <input type="text" name="content" >
-      <!-- <input type="submit" value="追加"> -->
-      <button class="btn">送信</button>
+      <input class="create_btn btn" type="submit" value="追加">
     </form>
       <table>
         <thead>
+
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
@@ -34,30 +34,34 @@
             <th>消去</th>
           </tr>
         </thead>
+
         <tbody>
         @foreach($blogs as $blog)
           <tr>
             <td>
               <div>{{$blog->created_at}}</div>
             </td>
-            <td>
-              <div>
-                <input type="text" value="{{$blog->content}}">
-              </div>
-            </td>
-            <td>
-              <form action="/todo/update/{{$blog->id}}" method="post">
-              @csrf
-                <button>更新</button>
-              </form>
-            </td>
-            <td>
-              <form action="/todo/delete/{{$blog->id}}" method="post">
-              @csrf
-                <button>消去</button>
-              </form>
-            </td>
 
+            <form action="/todo/update/" method="post">
+            @csrf
+              <input type="hidden" name="id" value="{{$blog->id}}">
+              <td>
+                <div>
+                  <input type="text" name="content" value="{{$blog->content}}">
+                </div>
+              </td>
+              <td>
+                <input class="update_btn btn" type="submit" value="更新">
+              </td>
+            </form>
+
+            <form action="/todo/delete/" method="post">
+              <td>
+                  @csrf
+                  <input type="hidden" name="id" value="{{$blog->id}}">
+                  <input class="delete_btn btn" type="submit" value="消去">
+              </td>
+            </form>
           </tr>
         @endforeach
         </tbody>

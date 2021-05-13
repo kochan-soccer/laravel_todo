@@ -26,9 +26,9 @@ Route::get('/', [TodoController::class, 'index']);
 Route::post('/todo/create/', [TodoController::class, 'create']);
 
 // タスクの更新
-Route::post('/todo/update', [TodoController::class, 'update']);
+Route::post('/todo/update/', [TodoController::class, 'update']);
 
 // タスクの消去
-Route::post('/todo/delete/{id}', [TodoController::class, 'delete']);
+Route::post('/todo/delete/', [TodoController::class, 'delete']);
 
 
