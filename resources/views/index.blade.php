@@ -20,21 +20,45 @@
     </div>
     @endif
     <form action="/todo/create" method="post">
+    @csrf
       <input type="text" name="content" >
-      <input type="submit" value="追加">
+      <!-- <input type="submit" value="追加"> -->
+      <button class="btn">送信</button>
     </form>
       <table>
         <thead>
-          <th>作成日</th>
-          <th>タスク名</th>
-          <th>更新</th>
-          <th>消去</th>
+          <tr>
+            <th>作成日</th>
+            <th>タスク名</th>
+            <th>更新</th>
+            <th>消去</th>
+          </tr>
         </thead>
         <tbody>
         @foreach($blogs as $blog)
-        <td>
-          <div>{{$blog->created_at}}</div>
-        </td>
+          <tr>
+            <td>
+              <div>{{$blog->created_at}}</div>
+            </td>
+            <td>
+              <div>
+                <input type="text" value="{{$blog->content}}">
+              </div>
+            </td>
+            <td>
+              <form action="/todo/update/{{$blog->id}}" method="post">
+              @csrf
+                <button>更新</button>
+              </form>
+            </td>
+            <td>
+              <form action="/todo/delete/{{$blog->id}}" method="post">
+              @csrf
+                <button>消去</button>
+              </form>
+            </td>
+
+          </tr>
         @endforeach
         </tbody>
       </table>

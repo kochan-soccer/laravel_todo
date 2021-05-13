@@ -28,16 +28,17 @@ class TodoController extends Controller
 
 
     // タスクの更新
-    // public function update()
-    // {
-    //     return "Hello";
-    // }
+    public function update()
+    {
+        return "Hello";
+    }
 
     // タスクの消去
-    // public function delete()
-    // {
-    //     return "Hello";
-    // }
+    public function delete(Request $request)
+    {
+        Blog::find($request->id)->delete();
+        return redirect('/');
+    }
 
 
 

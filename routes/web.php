@@ -29,6 +29,6 @@ Route::post('/todo/create/', [TodoController::class, 'create']);
 Route::post('/todo/update', [TodoController::class, 'update']);
 
 // タスクの消去
-Route::post('/todo/delete', [TodoController::class, 'delete']);
+Route::post('/todo/delete/{id}', [TodoController::class, 'delete']);
 
 

@@ -10,7 +10,7 @@ class Blog extends Model
     protected $guarded = array('id');
 
     public static $rules = array(
-        'content' => 'required|max20',
+        'content' => 'required|string|max:20',
     );
 
 }
