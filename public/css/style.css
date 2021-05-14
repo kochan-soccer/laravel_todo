@@ -11,6 +11,7 @@ body {
   left: 23%;
   background: #fff;
   padding: 30px 40px 20px;
+  border-radius: 10px;
 }
 
 table {
@@ -22,6 +23,10 @@ table {
   margin: 0 auto 10px;
   text-align: left;
   font-size: 25px;
+}
+
+.error {
+  text-align: left;
 }
 
 .wrapper {
